@@ -1,6 +1,5 @@
 package co.cstad.springsecurity.repository;
 
-//import co.istad.springsecuritybasic.model.Role;
 import co.cstad.springsecurity.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

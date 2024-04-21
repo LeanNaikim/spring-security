@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class AuthRestController {
     private final UserService userService;
-
-
     @PostMapping("/register")
     public BaseResponse<UserResponse> createNewUser(@RequestBody UserRequest userRequest) {
         return BaseResponse.<UserResponse>createSuccess()

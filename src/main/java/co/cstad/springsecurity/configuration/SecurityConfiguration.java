@@ -14,13 +14,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-
     private final CustomUserDetailsService customUserDetailsService;
-
 //    @Bean
 //    public UserDetailsService userDetailsService(){
 //        UserDetails user1 = User.builder()
@@ -30,18 +27,17 @@ public class SecurityConfiguration {
 //                .build();
 //        UserDetails user2 = User.builder()
 //                .username("mr.normal")
-//                .password(passwordEncoder().encode("konoyaro"))
+//                .password(passwordEncoder().encode("susu"))
 //                .roles("USER")
 //                .build();
 //        UserDetails user3 = User.builder()
 //                .username("mr.author")
-//                .password(passwordEncoder().encode("authorr"))
+//                .password(passwordEncoder().encode("author"))
 //                .roles("AUTHOR")
 //                .build();
 //
 //        return new InMemoryUserDetailsManager(user1, user2, user3);
 //    }
-
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
@@ -57,13 +53,11 @@ public class SecurityConfiguration {
 
         return authProvider;
     }
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration
                                                                configurer) throws Exception{
         return configurer.getAuthenticationManager();
     }
-
     @Bean
     public SecurityFilterChain filter (HttpSecurity http) throws Exception{
         return http.authorizeHttpRequests(

@@ -9,9 +9,8 @@ import org.springframework.http.HttpStatus;
 public class BaseResponse <T> {
     private T payload;
     private String message;
-    private Object metadata; // relates to pagination
+    private Object metadata;
     private int status;
-
     public static <T> BaseResponse<T> createSuccess() {
         return new BaseResponse<T>()
                 .setStatus(HttpStatus.CREATED.value())

@@ -23,8 +23,6 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final RoleRepository roleRepository;
     private final UserRepository userRepository;
-
-
     @Override
     public UserResponse createUser(UserRequest userRequest) {
         // check for email address
